@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ListaCarro.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ListaCarro"
+	xmlns:car="clr-namespace:ListaCarro.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Carros"
+	BackgroundColor="White"
+	>
+
+	<TabBar>
+		<Tab Icon="dotnet_bot.png" Title="Home">
+			<ShellContent ContentTemplate="{DataTemplate local:MainPage}">
+			</ShellContent>
+		</Tab>
+
+		<Tab Icon="car.png" Title="Carros">
+			<ShellContent ContentTemplate="{DataTemplate car:Carros}">
+			</ShellContent>
+		</Tab>
+
+	</TabBar>
+
+</Shell>

@@ -1,0 +1,79 @@
+﻿[
+    {
+        "Name": "amc rebel sst",
+        "Acceleration": 12,
+        "Year": "01-01-1970",
+        "Origin": "USA",
+        "Image": "https://www.macoratti.net/imagens/carros/carro1.jpg"
+    },
+    {
+        "Name": "ford torino",
+        "Acceleration": 10.5,
+        "Year": "01-01-1972",
+        "Origin": "USA",
+        "Image": "https://www.macoratti.net/imagens/carros/carro2.jpg"
+    },
+    {
+        "Name": "ford galaxie 500",
+        "Acceleration": 10,
+        "Year": "01-01-1971",
+        "Origin": "USA",
+        "Image": "https://www.macoratti.net/imagens/carros/carro3.jpg"
+    },
+    {
+        "Name": "chevrolet impala",
+        "Acceleration": 9,
+        "Year": "01-01-1973",
+        "Origin": "USA",
+        "Image": "https://www.macoratti.net/imagens/carros/carro4.jpg"
+    },
+    {
+        "Name": "plymouth fury iii",
+        "Acceleration": 8.5,
+        "Year": "01-01-1975",
+        "Origin": "USA",
+        "Image": "https://www.macoratti.net/imagens/carros/carro5.jpg"
+    },
+    {
+        "Name": "pontiac catalina",
+        "Acceleration": 10,
+        "Year": "01-01-1975",
+        "Origin": "USA",
+        "Image": "https://www.macoratti.net/imagens/carros/carro6.jpg"
+    },
+    {
+        "Name": "amc ambassador dpl",
+        "Acceleration": 8.5,
+        "Year": "01-01-1976",
+        "Origin": "USA",
+        "Image": "https://www.macoratti.net/imagens/carros/carro7.jpg"
+    },
+    {
+        "Name": "citroen ds-21 pallas",
+        "Acceleration": 17.5,
+        "Year": "01-01-1973",
+        "Origin": "Europe",
+        "Image": "https://www.pexels.com/photo/photography-of-a-blue-mercedes-benz-5-door-hatchback-810357/"
+    },
+    {
+        "Name": "plymouth satellite (sw)",
+        "Acceleration": 10.5,
+        "Year": "01-01-1974",
+        "Origin": "USA",
+        "Image": "https://www.pexels.com/photo/white-bmw-sedan-parked-beside-tree-100656/"
+    },
+    {
+        "Name": "amc rebel sst (sw)",
+        "Acceleration": 11,
+        "Year": "01-01-1976",
+        "Origin": "USA",
+        "Image": "https://www.pexels.com/photo/white-jeep-cherokee-suv-near-stacked-brown-pallet-boards-119435/"
+    },
+    {
+        "Name": "dodge challenger se",
+        "Acceleration": 10,
+        "Year": "01-01-1979",
+        "Origin": "USA",
+        "Image": "https://www.pexels.com/photo/photo-of-parked-lime-green-lamborghini-2127733/"
+    }
+]

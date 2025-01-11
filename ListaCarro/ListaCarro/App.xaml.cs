@@ -18,7 +18,10 @@
 
             //MainPage = new FlyoutPageDemo();
 
-            MainPage = new TabbedPageDemo();
+            //MainPage = new TabbedPageDemo();
+            //MainPage = new StackLayoutDemo();
+
+            MainPage = new StackLayoutLogin();
         }
     }
 }

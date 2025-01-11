@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListaCarro.StackLayoutDemo"
+             Title="StackLayoutDemo">
+    
+	<StackLayout Orientation="Horizontal" Margin="20" Spacing="5">
+        <Label Text="Texto 1" FontSize="20"
+            BackgroundColor="Yellow" />
+
+		<Label Text="Texto 2" FontSize="20"
+            BackgroundColor="Blue" />
+
+		<Label Text="Texto 3" FontSize="20"
+            BackgroundColor="Red" />
+
+		<Label Text="Texto 4" FontSize="20"
+            BackgroundColor="Green" />
+
+		<Label Text="Texto 5" FontSize="20"
+            BackgroundColor="Aqua" />
+	</StackLayout>
+	
+</ContentPage>

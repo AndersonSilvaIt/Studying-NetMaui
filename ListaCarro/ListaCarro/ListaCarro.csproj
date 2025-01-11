@@ -75,6 +75,9 @@
 	  <MauiXaml Update="MinhaPagina.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="TabbedPageDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Carros.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

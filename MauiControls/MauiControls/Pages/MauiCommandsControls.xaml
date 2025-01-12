@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControls.Pages.MauiCommandsControls"
+             Title="Maui Commands Controls">
+	<ScrollView>
+		<VerticalStackLayout Margin="10">
+
+			<Button Text="Clique para rodar o texto!"
+				BackgroundColor="Green"
+				x:Name="btnDemo"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				Clicked="btnDemo_Clicked"/>
+
+			<Label x:Name="lblDedmo"
+			   Text=".NET MAUI"
+			   TextColor="Blue"
+			   FontSize="25"
+			   FontAttributes="Bold"
+			   VerticalOptions="Center"
+			   HorizontalOptions="Center"/>
+
+			<Button Text="Clique para rodar o texto!"
+				HeightRequest="80"
+				WidthRequest="200"
+				BackgroundColor="Green"
+				ImageSource="android_os.png"
+				x:Name="btnDemo2"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				Clicked="btnDemo2_Clicked"
+				IsEnabled="False"/>
+
+			<ImageButton
+			Source="dotnet_bot.png"
+			x:Name="btnImgDemo"
+			Aspect="AspectFit"
+			Clicked="btnImgDemo_Clicked"
+			HeightRequest="200"
+			WidthRequest="200"
+			HorizontalOptions="Center"
+			VerticalOptions="Center"
+			/>
+
+			<StackLayout Padding="20">
+				<Label Text="Qual o seu animal favorito?" 
+				   FontSize="Large" TextColor="Blue"/>
+
+				<RadioButton Content="Gato" Value="Gato" GroupName="Pets" />
+				<RadioButton Content="Cachorro" Value="Cachorro" GroupName="Pets" />
+				<RadioButton Content="Galo" Value="Galo" IsChecked="True" GroupName="Pets" />
+			</StackLayout>
+
+			<StackLayout Padding="20" RadioButtonGroup.GroupName="Pets2">
+				<Label Text="Qual o seu animal favorito?" 
+				   FontSize="Large" TextColor="Blue"/>
+
+				<RadioButton Content="Gato" Value="Gato" />
+				<RadioButton Content="Cachorro" Value="Cachorro" CheckedChanged="RadioButton_CheckedChanged"/>
+				<RadioButton Content="Galo" Value="Galo" IsChecked="True" />
+				<Label x:Name="lblPets2" Text=""/>
+			</StackLayout>
+
+			<StackLayout>
+				<SearchBar Placeholder="Procurar produto"
+					   BackgroundColor="Cyan"
+					   SearchButtonPressed="SearchBar_SearchButtonPressed" />
+
+			</StackLayout>
+
+			<SwipeView BackgroundColor="LightCyan">
+
+				<SwipeView.LeftItems>
+					<SwipeItems>
+						<SwipeItem
+						BackgroundColor="LightGreen"
+						IconImageSource="gato.png"
+						Invoked="SwipeItem_Invoked"
+						Text="Gato" />
+
+						<SwipeItem
+						BackgroundColor="LightPink"
+						IconImageSource="galo.png"
+						Invoked="SwipeItem_Invoked"
+						Text="Galo" />
+
+					</SwipeItems>
+				</SwipeView.LeftItems>
+
+				<SwipeView.RightItems>
+					<SwipeItem
+						BackgroundColor="LemonChiffon"
+						IconImageSource="cao.png"
+						Invoked="SwipeItem_Invoked"
+						Text="Cachorro" />
+
+				</SwipeView.RightItems>
+
+				<Grid BackgroundColor="LightGray"
+				  HeightRequest="60"
+				  WidthRequest="300" >
+					<Label HorizontalOptions="Center"
+					   Text="&lt;== Deslizar ==>"
+					   FontSize="Large"
+					   VerticalOptions="Center"/>
+				</Grid>
+			</SwipeView>
+
+		</VerticalStackLayout>
+
+	</ScrollView>
+</ContentPage>

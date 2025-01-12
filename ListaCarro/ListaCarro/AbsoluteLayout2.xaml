@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListaCarro.AbsoluteLayout2"
+             Title="AbsoluteLayout2">
+    <AbsoluteLayout>
+		
+		<BoxView Color="Black"
+				 AbsoluteLayout.LayoutBounds=".5, .5, 100,100"
+				 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+		<BoxView Color="Yellow"
+				 AbsoluteLayout.LayoutBounds="1, .5, 25,100"
+				 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+		<BoxView Color="Red"
+				 AbsoluteLayout.LayoutBounds="0, .5, 25,100"
+				 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+		<BoxView Color="Blue"
+				 AbsoluteLayout.LayoutBounds=".5, 0, 100,25"
+				 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+		<BoxView Color="Green"
+				 AbsoluteLayout.LayoutBounds=".5, 1, 100,25"
+				 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+	</AbsoluteLayout>
+</ContentPage>

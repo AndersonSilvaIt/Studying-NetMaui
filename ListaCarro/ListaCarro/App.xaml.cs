@@ -28,7 +28,12 @@
 
             //MainPage = new FlexLayoutDemo2();
 
-            MainPage = new FlexLayoutDemo3();
+            //MainPage = new FlexLayoutDemo3();
+
+            //MainPage = new AbsoluteLayoytDemo();
+            //MainPage = new AbsoluteLayout2();
+
+            MainPage = new AbsoluteLayout4();
         }
     }
 }

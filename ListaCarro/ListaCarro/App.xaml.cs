@@ -21,7 +21,9 @@
             //MainPage = new TabbedPageDemo();
             //MainPage = new StackLayoutDemo();
 
-            MainPage = new StackLayoutLogin();
+            //MainPage = new StackLayoutLogin();
+            //MainPage = new GridLayoutDemo();
+            MainPage = new GridLogin();
         }
     }
 }

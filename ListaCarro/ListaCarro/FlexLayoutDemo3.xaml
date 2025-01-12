@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListaCarro.FlexLayoutDemo3"
+             Title="FlexLayoutDemo3">
+
+	<FlexLayout Direction="Column"
+				JustifyContent="SpaceEvenly"
+				AlignItems="Center">
+
+		<Label Text="Exemplo de Flexlayout"
+			   FontSize="Large" TextColor="Red"/>
+
+		<Image Source="dotnet_bot.png"/>
+
+		<Button Text="Botão sem função" FontSize="Large"/>
+
+		<Label Text="Bruce - 2025" FontSize="Large"/>
+
+	</FlexLayout>
+</ContentPage>

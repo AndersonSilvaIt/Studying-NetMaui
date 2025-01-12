@@ -23,7 +23,12 @@
 
             //MainPage = new StackLayoutLogin();
             //MainPage = new GridLayoutDemo();
-            MainPage = new GridLogin();
+            //MainPage = new GridLogin();
+            //MainPage = new FlexLayoutDemo();
+
+            //MainPage = new FlexLayoutDemo2();
+
+            MainPage = new FlexLayoutDemo3();
         }
     }
 }

@@ -70,6 +70,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="FlexLayoutDemo3.xaml.cs">
+	    <DependentUpon>FlexLayoutDemo3.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="FlexLayoutDemo2.xaml.cs">
+	    <DependentUpon>FlexLayoutDemo2.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="FlexLayoutDemo3.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="FlexLayoutDemo2.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="FlexLayoutDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="FlyoutPageDemo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

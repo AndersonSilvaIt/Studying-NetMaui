@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListaCarro.FlexLayoutDemo2"
+             Title="FlexLayoutDemo2">
+	
+    <FlexLayout Direction="Column" Margin="10" Padding="10">
+		
+		<!-- Header -->
+		<Label Text="Cabeçalho" FontSize="Large" Background="Aqua"
+			   HorizontalTextAlignment="Center"/>
+
+
+		<!-- Body -->
+
+		<FlexLayout FlexLayout.Grow="1">
+			<Label Text="Conteúdo" FontSize="Large" Background="Gray"
+				   HorizontalTextAlignment="Center"
+				   VerticalTextAlignment="Center"
+				   FlexLayout.Grow="1"/>
+
+			<BoxView FlexLayout.Basis="50"
+					 FlexLayout.Order="-1"
+					 Color="Blue"/>
+
+			<BoxView FlexLayout.Basis="50"
+					 Color="Green"/>
+		</FlexLayout>
+		
+		<!-- Rodapé -->
+		<Label Text="Rodapé" FontSize="Large" Background="Yellow"
+			   HorizontalTextAlignment="Center"/>
+
+	</FlexLayout>
+</ContentPage>

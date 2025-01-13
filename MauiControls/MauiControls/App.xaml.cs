@@ -12,6 +12,10 @@ namespace MauiControls
             MainPage = new NavigationPage(new MauiCommandsControls());
 
             MainPage = new NavigationPage(new MauiSetValueControls());
+
+            MainPage = new NavigationPage(new MauiEditControls());
+
+            MainPage = new NavigationPage(new MauiEditorControls());
         }
     }
 }

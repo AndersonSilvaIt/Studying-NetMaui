@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControls.Pages.MauiEditControls"
+             Title="Maui Edit Controls">
+	<VerticalStackLayout>
+
+		<Entry x:Name="entry1"
+			   Placeholder="View Eentry"
+			   PlaceholderColor="Blue"
+			   FontSize="Medium"	
+			   IsReadOnly="False"
+			   MaxLength="100"
+			   HeightRequest="50"
+			   IsPassword="False"
+			   Keyboard="Text"
+			   CharacterSpacing="5"
+			   ClearButtonVisibility="WhileEditing"
+			   TextChanged="entry1_TextChanged"
+			   Completed="entry1_Completed"
+			   ReturnType="Search" />
+
+		<Editor x:Name="editor1"
+			   Placeholder="View Editor"
+			   PlaceholderColor="Black"
+			   AutoSize="TextChanges"
+			   FontSize="Large"	
+			   IsReadOnly="False"
+			   Keyboard="Text"
+			   CharacterSpacing="1" />
+
+		<StackLayout Padding="40" Spacing="40">
+			<Label Text="ActivityIndicator"
+				   FontSize="Large"/>
+
+			<ActivityIndicator IsRunning="True" />
+			<ActivityIndicator IsRunning="True" Color="Orange" />
+
+		</StackLayout>
+
+		<StackLayout Padding="40" Spacing="40">
+			<Label Text="ProgressBar" FontSize="Large" />
+			<ProgressBar Progress="0.5"/>
+			<ProgressBar Progress="0.8" ProgressColor="Orange" />
+
+		</StackLayout>
+
+		<StackLayout Margin="20">
+			<Label Text="Progresso do Projeto" FontSize="Medium" />
+			<ProgressBar x:Name="progressBar"
+						 ProgressColor="Red"
+						 Progress="0.25"/>
+			
+			<Button Text="Progredir até 90"
+					BackgroundColor="Gray"
+					Clicked="Button_Clicked"
+					FontSize="Medium" />
+		</StackLayout>
+		
+		
+
+	</VerticalStackLayout>
+</ContentPage>

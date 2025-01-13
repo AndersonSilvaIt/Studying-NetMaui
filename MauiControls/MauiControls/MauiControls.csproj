@@ -59,6 +59,11 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\android_os.png" />
 	  <None Remove="Resources\Images\cao.png" />
+	  <None Remove="Resources\Images\galaxia1.jpg" />
+	  <None Remove="Resources\Images\galaxia2.jpg" />
+	  <None Remove="Resources\Images\galaxia3.jpg" />
+	  <None Remove="Resources\Images\galaxia4.jpg" />
+	  <None Remove="Resources\Images\galaxia5.jpg" />
 	  <None Remove="Resources\Images\galo.png" />
 	  <None Remove="Resources\Images\gato.png" />
 	</ItemGroup>
@@ -70,6 +75,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\CollectionView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\CollectionViewDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ListViewDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\MauiColletionController.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\MauiCommandsControls.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -83,6 +100,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\MauiSetValueControls.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\PickerViewDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\TableViewDemo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

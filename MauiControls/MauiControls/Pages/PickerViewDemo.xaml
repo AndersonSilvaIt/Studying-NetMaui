@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControls.Pages.PickerViewDemo"
+             Title="PickerViewDemo">
+	<VerticalStackLayout>
+
+		<Picker x:Name="picker" Title="Selecione uma cidade">
+			<Picker.ItemsSource>
+				
+				<x:Array Type="{x:Type x:String}">
+					<x:String>São Paulo</x:String>
+					<x:String>Paris</x:String>
+					<x:String>Nova York</x:String>
+					<x:String>Roma</x:String>
+					<x:String>Berlim</x:String>
+					<x:String>Santiago</x:String>
+					<x:String>Lisboa</x:String>
+					<x:String>Madrid</x:String>
+				</x:Array>
+				
+			</Picker.ItemsSource>
+
+		</Picker>
+
+	</VerticalStackLayout>
+</ContentPage>

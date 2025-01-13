@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControls.Pages.MauiSetValueControls"
+             Title="Maui Set Value Controls">
+
+	<VerticalStackLayout>
+		<Label Text="Clique no Checkbox"/>
+
+		<CheckBox x:Name="checkBox1"
+				  IsChecked="False"
+				  Color="Green"
+				  CheckedChanged="checkBox1_CheckedChanged"
+				  HorizontalOptions="Start"
+				  />
+
+		<StackLayout Orientation="Horizontal">
+			<CheckBox x:Name="checkBox2"
+				  IsChecked="False"
+				  Color="Green"
+				  CheckedChanged="checkBox2_CheckedChanged"
+				  HorizontalOptions="Start"
+				  />
+
+			<CheckBox x:Name="checkBox3"
+				  IsChecked="True"
+				  Color="Blue"
+				  CheckedChanged="checkBox3_CheckedChanged"
+				  HorizontalOptions="Start"
+				  />
+		</StackLayout>
+
+		<StackLayout Padding="40">
+			<Label x:Name="lblSlider" HorizontalOptions="Center" />
+			<Slider x:Name="slider1"
+					Minimum="0"
+					Maximum="10"
+					MinimumTrackColor="Yellow"
+					MaximumTrackColor="Green"
+					ValueChanged="slider1_ValueChanged"
+					ThumbImageSource="dotnet_bot.png"
+					ThumbColor="DarkRed"
+				/>
+
+		</StackLayout>
+
+		<StackLayout>
+			<Stepper x:Name="stepper1"
+					 Minimum="2"
+					 Maximum="10"
+					 Increment="2"
+					 HorizontalOptions="Start"
+					 ValueChanged="stepper1_ValueChanged"
+					 />
+			<Label x:Name="lblStepper" HorizontalOptions="Start"/>
+		</StackLayout>
+
+		<StackLayout Margin="10">
+
+			<Label Text="Switch" HorizontalOptions="Center"/>
+			<Switch x:Name="switch1"
+					IsToggled="True"
+					OnColor="Black"
+					ThumbColor="Green"
+					Toggled="switch1_Toggled"
+					HorizontalOptions="Center" />
+
+		</StackLayout>
+
+		<DatePicker MinimumDate="01/01/2025"
+					MaximumDate="12/31/2025"
+					Date="01/13/2025" 
+					HorizontalOptions="Center"
+					DateSelected="DatePicker_DateSelected"
+					Format="dd/MM/yyyy" />
+
+		<TimePicker x:Name="time1"
+					Time="10:45:25"
+					Format="HH:mm:ss"
+					HorizontalOptions="Center"
+					PropertyChanged="TimePicker_PropertyChanged"
+			/>
+
+	</VerticalStackLayout>
+</ContentPage>

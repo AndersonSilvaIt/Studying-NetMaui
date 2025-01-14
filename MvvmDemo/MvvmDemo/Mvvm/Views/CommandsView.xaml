@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvvmDemo.Mvvm.Views.CommandsView"
+             Title="CommandsView">
+	<VerticalStackLayout>
+
+		<Label
+			Text="Button : Command"
+			FontSize="20"
+			FontAttributes="Bold"
+			VerticalOptions="Center"
+			HorizontalOptions="Center" />
+
+		<Button
+			x:Name="btnAlerta"
+			Text="Exibir alerta"
+			Command="{Binding ButtonClickCommand}" />
+
+		<Label
+			Text="SearchBar - Passando parâmetros"
+			FontSize="20"
+			FontAttributes="Bold"
+			VerticalOptions="Center"
+			HorizontalOptions="Center" />
+
+		<SearchBar BackgroundColor="Aqua"
+				   x:Name="searchbar"
+				   SearchCommandParameter="{Binding }"
+				   SearchCommand="{Binding Source={x:Reference searchbar}, Path=Text}" />
+
+
+	</VerticalStackLayout>
+</ContentPage>

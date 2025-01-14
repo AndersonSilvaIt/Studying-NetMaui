@@ -12,7 +12,7 @@ namespace MvvmDemo.Mvvm.ViewModels
         {
             SearchCommand = new Command((searchText) => {
                 var texto = searchText;
-                Alerta(texto);
+                //Alerta(texto);
             });
         }
 

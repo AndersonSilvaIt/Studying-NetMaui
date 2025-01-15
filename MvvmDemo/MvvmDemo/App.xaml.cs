@@ -8,7 +8,7 @@ namespace MvvmDemo
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new SaudacaoView());
+            MainPage = new NavigationPage(new EnderecoView());
         }
     }
 }

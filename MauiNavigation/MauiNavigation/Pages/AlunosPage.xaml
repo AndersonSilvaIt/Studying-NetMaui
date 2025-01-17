@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiNavigation.Pages.AlunosPage"
+             Title="AlunosPage">
+    <VerticalStackLayout>
+
+        <Entry x:Name="txtNome"
+                FontSize="30"
+               Placeholder="Informe o Nome" />
+
+        <Button x:Name="button1"
+                Text="Exibir Detalhes"
+                FontSize="30"
+                Clicked="button1_Clicked" />
+
+    </VerticalStackLayout>
+</ContentPage>

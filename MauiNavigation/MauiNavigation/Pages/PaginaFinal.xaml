@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiNavigation.Pages.PaginaFinal"
+             Title="PaginaFinal">
+    <VerticalStackLayout VerticalOptions="Center" Padding="30" Spacing="30">
+
+        <Button
+            Text="Ir para a Página 2"
+            FontSize="20"
+            x:Name="button1" 
+            BackgroundColor="Black"
+            Clicked="button1_Clicked_1"/>
+
+        <Button
+            Text="Ir para a Página Inicial"
+            FontSize="20"
+            x:Name="button2" 
+            Clicked="button2_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

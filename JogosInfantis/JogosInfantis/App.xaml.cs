@@ -8,7 +8,7 @@ namespace JogosInfantis
         {
             InitializeComponent();
 
-            MainPage = new JogosInfantisView();
+            MainPage = new NavigationPage(new JogosInfantisView());
         }
     }
 }

@@ -18,31 +18,25 @@ public partial class JogosInfantisDetailsView : ContentPage
         TextToSpeech.SpeakAsync(selectedItem.Name);
     }
 
-    private void ExibirJogo(string category)
+    private void ExibirJogo(string categoryName)
     {
         JogoData jogo = new JogoData();
-        switch (category)
+        switch (categoryName)
         {
             case "Numbers":
                 CvJogos.ItemsSource = jogo.Numbers; break;
-
             case "Letters":
                 CvJogos.ItemsSource = jogo.Letters; break;
-
             case "Shapes":
                 CvJogos.ItemsSource = jogo.Shapes; break;
-
             case "Colors":
                 CvJogos.ItemsSource = jogo.Colors; break;
-
             case "Fruits":
                 CvJogos.ItemsSource = jogo.Fruits; break;
-
             case "Animals":
                 CvJogos.ItemsSource = jogo.Animals; break;
-
-            default: break;
+            default:
+                break;
         }
-
     }
 }

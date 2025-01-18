@@ -11,19 +11,23 @@
                     SelectionChanged="CvJogos_SelectionChanged">
 
         <CollectionView.ItemsLayout>
-            <GridItemsLayout Orientation="Vertical" HorizontalItemSpacing="20"/>
+            <GridItemsLayout Orientation="Vertical" HorizontalItemSpacing="20" Span="2"/>
         </CollectionView.ItemsLayout>
 
         <CollectionView.ItemTemplate>
             <DataTemplate>
+
                 <Border Padding="30">
-                    <Image HeightRequest="100" Aspect="AspectFit"
-                           Source="{Binding ImageUrl}"/>
-                    <Label FontSize="Medium"
-                           FontAttributes="Bold"
-                           HorizontalOptions="Center"
-                           Text="{Binding Name}"/>
+                    <VerticalStackLayout VerticalOptions="Center">
+                        <Image HeightRequest="100" Aspect="AspectFit"
+                               Source="{Binding ImageUrl}"/>
+                        <Label FontSize="Medium" 
+                               FontAttributes="Bold" 
+                               HorizontalOptions="Center"
+                               Text="{Binding Name}"/>
+                    </VerticalStackLayout>
                 </Border>
+
             </DataTemplate>
         </CollectionView.ItemTemplate>
 

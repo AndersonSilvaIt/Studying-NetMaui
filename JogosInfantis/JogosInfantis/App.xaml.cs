@@ -1,6 +1,6 @@
-﻿using MauiCollectionView.MVVM.Views;
+﻿using JogosInfantis.Views;
 
-namespace MauiCollectionView
+namespace JogosInfantis
 {
     public partial class App : Application
     {
@@ -8,7 +8,7 @@ namespace MauiCollectionView
         {
             InitializeComponent();
 
-            MainPage = new ContatosView();
+            MainPage = new JogosInfantisView();
         }
     }
 }

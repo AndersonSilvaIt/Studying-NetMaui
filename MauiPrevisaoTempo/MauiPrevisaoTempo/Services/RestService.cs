@@ -8,9 +8,9 @@ namespace MauiPrevisaoTempo.Services
     {
         HttpClient _client;
         JsonSerializerOptions _serializerOptions;
-        public RestService(HttpClient client)
+        public RestService()
         {
-            _client = client;
+            _client = new HttpClient();
             _serializerOptions = new JsonSerializerOptions()
             {
                 PropertyNameCaseInsensitive = true
@@ -20,6 +20,7 @@ namespace MauiPrevisaoTempo.Services
         public async Task<WeatherData> GetWeatherData(string query)
         {
             WeatherData weatherData = null;
+
             try
             {
                 var response = await _client.GetAsync(query);
@@ -27,7 +28,7 @@ namespace MauiPrevisaoTempo.Services
                 {
                     using (var responseStream = await response.Content.ReadAsStreamAsync())
                     {
-                        weatherData = await JsonSerializer.DeserializeAsync<WeatherData>(responseStream);
+                        weatherData = await JsonSerializer.DeserializeAsync<WeatherData>(responseStream, _serializerOptions);
                     }
                 }
             }
@@ -36,7 +37,6 @@ namespace MauiPrevisaoTempo.Services
                 Debug.WriteLine(ex.Message);
                 throw;
             }
-
             return weatherData;
         }
     }

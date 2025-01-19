@@ -1,25 +1,36 @@
-﻿namespace MauiPrevisaoTempo
+﻿using MauiPrevisaoTempo.Models;
+using MauiPrevisaoTempo.Services;
+
+namespace MauiPrevisaoTempo
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private readonly IRestService _restService;
 
-        public MainPage()
+        public MainPage(IRestService restService)
         {
             InitializeComponent();
+            _restService = restService;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            count++;
+            if (!string.IsNullOrWhiteSpace(_cidade.Text))
+            {
+                WeatherData weatherData = await _restService.GetWeatherData(GenerateRequestURL(Contants.OpenWeatherMapEndpoint));
+                BindingContext = weatherData;
+            }
+        }
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+        private string GenerateRequestURL(string endPoint)
+        {
+            string requestUri = endPoint;
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            requestUri += $"?q={_cidade.Text}";
+            requestUri += $"&units=metric";
+            requestUri += $"&APPID={Contants.OpenWeatherMapAPIKey}";
+            requestUri += $"&lang=pt_br";
+            return requestUri;
         }
     }
-
 }

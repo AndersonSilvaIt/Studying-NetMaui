@@ -4,7 +4,7 @@ namespace MauiPrevisaoTempo.Converters
 {
     public class LongToDateTimeConverter : IValueConverter
     {
-        DateTime _time = new DateTime(1970, 1, 1, 0, 0,0)
+        DateTime _time = new DateTime(1970, 1, 1, 0, 0, 0);
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             CultureInfo ptBrCulture = new CultureInfo("pt-BR");

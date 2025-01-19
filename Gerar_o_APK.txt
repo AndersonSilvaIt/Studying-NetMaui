@@ -1,0 +1,12 @@
+1º Etapa
+Na pasta do projeto, onde está o arquivo crproj, executar o comando abaixo
+
+keytool -genkeypair -v -keystore bruce.keystore -alias mauiappteste -keyalg RSA -keysize 2048 -validity 100
+
+bruce.keystore = Nome da Keystore, alterar
+mauiappteste = trocar o alias
+
+Anotas as senhas informadas na hora de gerar
+
+
+dotnet publish MeusLivros.csproj -f:net8.0-android -c:Release /p:AndroidSigningKeyPass=bruce025 /p:AndroidSigningStorePass=bruce025 /p:AndroidSigningKeyAlias=mauiappteste /p:AndroidStore=True

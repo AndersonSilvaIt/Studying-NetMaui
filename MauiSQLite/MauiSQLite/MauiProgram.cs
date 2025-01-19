@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MauiSQLite.Services;
+using Microsoft.Extensions.Logging;
 
 namespace MauiSQLite
 {
@@ -18,6 +19,8 @@ namespace MauiSQLite
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+
+            builder.Services.AddSingleton<IAgendaService, AgendaService>();
 
             return builder.Build();
         }

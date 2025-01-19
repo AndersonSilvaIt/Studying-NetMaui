@@ -1,12 +1,15 @@
-﻿namespace MauiSQLite
+﻿using MauiSQLite.MVVM.Views;
+using MauiSQLite.Services;
+
+namespace MauiSQLite
 {
     public partial class App : Application
     {
-        public App()
+        public App(IAgendaService agendaService)
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new AgendaView(agendaService));
         }
     }
 }

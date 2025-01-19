@@ -4,12 +4,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MeusLivros"
-    Shell.FlyoutBehavior="Disabled"
-    Title="MeusLivros">
+    xmlns:views="clr-namespace:MeusLivros.MVVM.Views"
+    Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <ShellContent ContentTemplate="{DataTemplate views:LivrosPage}" Route="LivrosPage" />
 
 </Shell>

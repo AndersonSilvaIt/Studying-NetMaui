@@ -51,7 +51,7 @@ namespace AppLanches.Services
                     };
                 }
 
-                return new ApiResponse<bool> { Data = true;
+                return new ApiResponse<bool> { Data = true };
             }
             catch (Exception ex)
             {
@@ -92,7 +92,7 @@ namespace AppLanches.Services
                 Preferences.Set("usuarioid", (int)result!.UsuarioId!);
                 Preferences.Set("usuarionome", result!.UsuarioNome);
 
-                return new ApiResponse<bool> { Data = true;
+                return new ApiResponse<bool> { Data = true };
             }
             catch (Exception ex)
             {

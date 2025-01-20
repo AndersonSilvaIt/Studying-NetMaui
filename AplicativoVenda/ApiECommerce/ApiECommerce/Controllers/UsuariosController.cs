@@ -1,6 +1,7 @@
 ﻿using ApiECommerce.Context;
 using ApiECommerce.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -41,10 +42,10 @@ public class UsuariosController : ControllerBase
     }
 
     [HttpPost("[action]")]
-    public async Task<IActionResult> Login([FromBody] Usuario usuario)
+    public async Task<IActionResult> Login([FromBody] LoginRequest usuario)
     {
         var usuarioAtual = await dbContext.Usuarios.FirstOrDefaultAsync(u =>
-                                 u.Email == usuario.Email && u.Senha == usuario.Senha);
+                                 u.Email == usuario.Email && u.Senha == usuario.Password);
 
         if (usuarioAtual is null)
         {

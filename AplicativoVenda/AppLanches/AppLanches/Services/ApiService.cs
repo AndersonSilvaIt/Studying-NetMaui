@@ -8,7 +8,7 @@ namespace AppLanches.Services
     public class ApiService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _baseUrl = "";
+        private readonly string _baseUrl = "https://mzv66v96-7066.brs.devtunnels.ms/";
         private readonly ILogger<ApiService> _logger;
         JsonSerializerOptions _serializerOptions;
 
@@ -67,7 +67,7 @@ namespace AppLanches.Services
                 var register = new Login
                 {
                     Email = email,
-                    Senha = password
+                    Password = password
                 };
 
                 var json = JsonSerializer.Serialize(register, _serializerOptions);
@@ -89,8 +89,8 @@ namespace AppLanches.Services
                 var result = JsonSerializer.Deserialize<Token>(jsonResult, _serializerOptions);
 
                 Preferences.Set("accesstoken", result!.AccessToken);
-                Preferences.Set("usuarioid", (int)result!.UsuarioId!);
-                Preferences.Set("usuarionome", result!.UsuarioNome);
+                Preferences.Set("usuarioid", (int)result!.UserId!);
+                Preferences.Set("usuarionome", result!.UserName);
 
                 return new ApiResponse<bool> { Data = true };
             }

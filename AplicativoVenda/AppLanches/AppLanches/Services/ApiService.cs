@@ -1,5 +1,6 @@
 ﻿using AppLanches.Models;
 using Microsoft.Extensions.Logging;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 
@@ -41,7 +42,7 @@ namespace AppLanches.Services
 
                 var response = await PostRequest("api/Usuarios/Register", content);
 
-                if (!response.IsSuccessStatusCode)
+                if(!response.IsSuccessStatusCode)
                 {
                     _logger.LogError($"erro ao enviar requisição HTTP: {response.StatusCode}");
 
@@ -52,8 +53,7 @@ namespace AppLanches.Services
                 }
 
                 return new ApiResponse<bool> { Data = true };
-            }
-            catch (Exception ex)
+            } catch(Exception ex)
             {
                 _logger.LogError($"Erro ao registrar o usuário: {ex.Message}");
                 return new ApiResponse<bool> { ErrorMessage = ex.Message };
@@ -75,7 +75,7 @@ namespace AppLanches.Services
 
                 var response = await PostRequest("api/Usuarios/Login", content);
 
-                if (!response.IsSuccessStatusCode)
+                if(!response.IsSuccessStatusCode)
                 {
                     _logger.LogError($"erro ao enviar requisição HTTP: {response.StatusCode}");
 
@@ -93,15 +93,91 @@ namespace AppLanches.Services
                 Preferences.Set("usuarionome", result!.UserName);
 
                 return new ApiResponse<bool> { Data = true };
-            }
-            catch (Exception ex)
+            } catch(Exception ex)
             {
                 _logger.LogError($"Erro no login: {ex.Message}");
                 return new ApiResponse<bool> { ErrorMessage = ex.Message };
             }
         }
 
+        public async Task<(List<Categoria>? Categorias, string? ErrorMessage)> GetCategorias()
+        {
+            return await GetAsync<List<Categoria>>("api/categorias");
+        }
 
+        public async Task<(Produto? ProdutoDetalhe, string? ErrorMessage)> GetProdutoDetalhe(int produtoId)
+        {
+            string endpoint = $"api/produtos/{produtoId}";
+
+            return await GetAsync<Produto>(endpoint);
+        }
+
+        public async Task<(List<Produto>? Produtos, string? ErrorMessage)> GetProdutos(string tipoProduto, string categoriaId)
+        {
+            string endpoint = $"api/Produtos?tipoProduto={tipoProduto}&categoriaId={categoriaId}";
+
+            return await GetAsync<List<Produto>>(endpoint);
+        }
+
+        private async Task<(T? Data, string? ErrorMessage)> GetAsync<T>(string endpoint)
+        {
+            try
+            {
+                AddAuthorizationHeader();
+
+                var response = await _httpClient.GetAsync(AppConfig.BaseUrl + endpoint);
+
+                if(response.IsSuccessStatusCode)
+                {
+                    var responseString = await response.Content.ReadAsStringAsync();
+                    var data = JsonSerializer.Deserialize<T>(responseString, _serializerOptions);
+
+                    return (data ?? Activator.CreateInstance<T>(), null);
+                } else
+                {
+                    if(response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                    {
+                        string errorMessage = "Unauthorized";
+                        _logger.LogWarning(errorMessage);
+                        return (default, errorMessage);
+                    }
+
+                    string generalErrorMessage = $"Erro na requisição: {response.ReasonPhrase}";
+                    _logger.LogError(generalErrorMessage);
+
+                    return (default, generalErrorMessage);
+                }
+            } catch(HttpRequestException ex)
+            {
+                string errorMessage = $"Erro de requisição HTTP: {ex.Message}";
+                _logger.LogError(ex, errorMessage);
+
+                return (default, errorMessage);
+            } catch(JsonException ex)
+            {
+                string errorMessage = $"Erro de desserialização JSON: {ex.Message}";
+                _logger.LogError(ex, errorMessage);
+
+                return (default, errorMessage);
+            } catch(Exception ex)
+            {
+                string errorMessage = $"Erro inesperado: {ex.Message}";
+                _logger.LogError(ex, errorMessage);
+
+                return (default, errorMessage);
+            }
+        }
+
+        private void AddAuthorizationHeader()
+        {
+            var token = Preferences.Get("accesstoken", string.Empty);
+
+            if(!string.IsNullOrEmpty(token))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                ;
+            }
+        }
 
         private async Task<HttpResponseMessage> PostRequest(string uri, HttpContent content)
         {
@@ -111,8 +187,7 @@ namespace AppLanches.Services
             {
                 var result = await _httpClient.PostAsync(enderecoUrl, content);
                 return result;
-            }
-            catch (Exception ex)
+            } catch(Exception ex)
             {
                 _logger.LogError($"Erro ao enviar requisição POST para {uri} : {ex.Message}");
                 return new HttpResponseMessage(System.Net.HttpStatusCode.BadRequest);
